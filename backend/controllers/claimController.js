@@ -1,5 +1,5 @@
-import claimHistory from '../models/claimHistory.js';
-import User from '../models/User.js';
+import User from "../models/user.js";
+import ClaimHistory from "../models/claimHistory.js";
 
 export const claimPoints = async (req, res) => {
   const { userId } = req.body;
@@ -12,7 +12,7 @@ export const claimPoints = async (req, res) => {
   user.totalPoints += points;
   await user.save();
 
-  const history = new claimHistory({ userId, points });
+  const history = new ClaimHistory({ userId, points });
   await history.save();
 
   res.json({ points, user });
@@ -24,6 +24,8 @@ export const getLeaderboard = async (req, res) => {
 };
 
 export const getHistory = async (req, res) => {
-  const history = await ClaimHistory.find().populate('userId').sort({ claimedAt: -1 });
+  const history = await ClaimHistory.find()
+    .populate("userId")
+    .sort({ claimedAt: -1 });
   res.json(history);
 };

@@ -1,9 +1,9 @@
 import express from 'express';
-import { claimPoints, getLeaderboard, getHistory } from '../controllers/claimController.js';
-const router = express.Router();
+import { claimPoints, getHistory, getLeaderboard } from '../controllers/claimController.js';
+const pointRouter = express.Router();
 
-router.post('/claim', claimPoints);
-router.get('/leaderboard', getLeaderboard);
-router.get('/history', getHistory);
+pointRouter.post('/claim', claimPoints);
+pointRouter.get('/leaderboard', getLeaderboard);
+pointRouter.get('/history', getHistory);
 
-export default router;
+export default pointRouter;
