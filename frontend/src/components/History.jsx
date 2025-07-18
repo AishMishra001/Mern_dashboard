@@ -5,7 +5,7 @@ export default function History() {
   const [history, setHistory] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/points/history").then((res) => {
+    axios.get("https://mern-dashboard-1-nanc.onrender.com/api/points/history").then((res) => {
       setHistory(res.data);
     });
   }, []);

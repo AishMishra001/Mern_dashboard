@@ -10,7 +10,7 @@ export default function CreateUserForm() {
     if (!name.trim()) return;
 
     try {
-      const res = await axios.post("http://localhost:5000/api/users", {
+      const res = await axios.post("https://mern-dashboard-1-nanc.onrender.com/api/users", {
         name: name.trim(),
       });
       setMessage(`User "${res.data.name}" created!`);

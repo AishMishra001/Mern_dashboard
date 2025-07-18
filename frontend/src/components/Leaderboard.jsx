@@ -6,7 +6,7 @@ export default function Leaderboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/points/leaderboard")
+      .get("https://mern-dashboard-1-nanc.onrender.com/api/points/leaderboard")
       .then((res) => setLeaderboard(res.data))
       .catch((err) => console.error("Leaderboard fetch failed", err));
   }, []);

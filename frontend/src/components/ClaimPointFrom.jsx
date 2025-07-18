@@ -6,7 +6,7 @@ export default function ClaimPointsForm() {
   const [selectedUser, setSelectedUser] = useState("");
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/users").then(res => {
+    axios.get("https://mern-dashboard-1-nanc.onrender.com/api/users").then(res => {
       setUsers(res.data);
     });
   }, []);
@@ -18,7 +18,7 @@ export default function ClaimPointsForm() {
 
     const randomPoints = Math.floor(Math.random() * 10) + 1;
 
-    await axios.post("http://localhost:5000/api/points/claim", {
+    await axios.post("https://mern-dashboard-1-nanc.onrender.com/api/points/claim", {
       userId: selectedUser,
       points: randomPoints,
     });
